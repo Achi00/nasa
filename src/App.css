@@ -1,38 +1,214 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Bebas+Neue&family=Dancing+Script:wght@700&family=Dongle:wght@700&family=DynaPuff:wght@600&family=Fugaz+One&family=Gemunu+Libre:wght@600&family=Goldman:wght@700&family=Hubballi&family=Inter:wght@900&family=Italiana&family=Kanit:wght@100;500&family=Kdam+Thmor+Pro&family=Koulen&family=Lato&family=League+Spartan:wght@100&family=Lobster&family=Monoton&family=Montserrat&family=Noto+Sans:wght@800&family=Odibee+Sans&family=Oleo+Script&family=Orbitron&family=Oswald:wght@500&family=Pacifico&family=Press+Start+2P&family=Questrial&family=Righteous&family=Roboto+Mono:wght@100&family=Roboto:wght@700&family=Rubik:wght@400;600&family=Russo+One&family=Secular+One&family=Silkscreen&family=Syncopate:wght@700&family=Train+One&family=Ubuntu:wght@300&family=Unbounded:wght@700&family=Varela+Round&display=swap&family=Nunito+Sans:wght@600');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+html, body {
+  overflow-x: hidden;
+  color: #f2f2f2;
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #000000;
+}
+
+/* nav */
+nav {
+  position: relative;
+  font-family: 'Unbounded', cursive;
+  text-decoration: none;
+}
+
+nav > .logo {
+ position: relative;
+ width: 5vw;
+ transform: translate(50%, 50%);
+ text-align: center;
+ display: flex;
+ align-items: center;
+}
+
+.nav-stack {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.logo > h3 {
+  border: 1px solid #f2f2f25b;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* home page */
+.wrapper {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(52,48,83,1) 26%, rgba(1,17,20,1) 100%);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  height: 85%;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: 1px solid #f2f2f25b;
+  border-radius: 35px;
+  padding: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content > h1 {
+  letter-spacing: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* picture of day styles */
+.content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60%;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.apod {
+  position: absolute;
+  /* z-index: 10; */
+  width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.apod > img {
+  border-radius: 25px;
+  border: 1px solid #f2f2f25b;
+  width: 60%;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.apod > p {
+  font-size: 1vw;
+  border-top: 1px solid #f2f2f25b;
+  padding: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 2rem;
+  margin-top: 20px;
+  border: 1px solid #f2f2f2;
+}
+.card > h1 {
+  font-size: 2vw;
+}
+.card > h2 {
+  font-size: 1vw;
+}
+.card > img {
+  position: absolute;
+  width: 35%;
+  height: auto;
+  left: 20%;
+  top: 20%;
+  border-radius: 25px;
+  border: 1px solid #f2f2f2;
+}
+.card > p {
+  position: relative;
+  left: 60%;
+  margin-top: 2rem;
+  width: 40%;
+  height: 50%;
+  overflow: auto;
+  padding: 1rem;
+  text-align: start;
+}
+
+@media only screen and (max-width: 425px) {
+  /* tech page */
+ .card > h1{
+  font-size: 3vw;
+ }
+ .card > h2{
+  font-size: 2vw;
+ }
+ .card > p{
+  width: 80%;
+  font-size: 2vw;
+ }
+ .card > img{
+  position: absolute;
+  top: 35%;
+ }
+ /* apod page */
+ .apod > img {
+  border-radius: 25px;
+  border: 1px solid #f2f2f25b;
+  width: 80%;
+  height: auto;
+}
+
+.apod > p {
+  font-size: 2vw;
+  width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 768px) {
+  /* tech page */
+ .card > h1{
+  font-size: 3vw;
+ }
+ .card > h2{
+  font-size: 2vw;
+ }
+ .card > p{
+  width: 50%;
+  font-size: 2vw;
+ }
+ .card > img{
+  position: absolute;
+  top: 40%;
+ }
+ /* apod page */
+ .apod > img {
+  border-radius: 25px;
+  border: 1px solid #f2f2f25b;
+  width: 80%;
+  height: auto;
+}
+
+.apod > p {
+  font-size: 2vw;
+  width: 100%;
   }
 }
